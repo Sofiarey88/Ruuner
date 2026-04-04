@@ -1,0 +1,68 @@
+{
+    "version": 1,
+    "name": "PlayerControllrs",
+    "maps": [
+        {
+            "name": "InGame",
+            "id": "dfee06fe-337b-4f9e-8604-c10aac9387d6",
+            "actions": [
+                {
+                    "name": "HorizontalMov",
+                    "type": "Button",
+                    "id": "37a328f1-7a9e-4572-8d15-3f0b04c75736",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cd0d0a1f-e2a9-4023-921f-12bbc726b02b",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMov",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Teclado",
+                    "id": "94ccd1d2-29a8-4368-af97-218c2231f048",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMov",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "7ffeaed1-65ef-44fc-ad13-b38336ae37f5",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMov",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "6bca1ed5-1c26-4c56-979f-d026347ddaf5",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMov",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
