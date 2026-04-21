@@ -8,7 +8,11 @@ public class Seccion : MonoBehaviour
 
     public float speed = 8f;
     public float largo = 20f;
-    public float ajuste = 1.2f;
+    public float ajuste = 1.3f;
+    public float separation = 0.01f; // pequeña separación para evitar z-fighting/recortes
+
+    [Tooltip("Activa para dibujar bounds y logs de depuración")]
+    public bool debugBounds = false;
 
     private Vector3 posicionInicial;
     Rigidbody rb;
@@ -39,7 +43,13 @@ public class Seccion : MonoBehaviour
     {
         rb.MovePosition(rb.position + Vector3.back * speed * Time.fixedDeltaTime);
 
-        if (rb.position.z < posicionInicial.z - (largo * ajuste))
+        // calcular longitud real de la sección si existe un collider (fallback a 'largo')
+        float sectionLength = largo;
+        Collider col = GetComponent<Collider>() ?? GetComponentInChildren<Collider>();
+        if (col != null)
+            sectionLength = col.bounds.size.z;
+
+        if (rb.position.z < posicionInicial.z - (sectionLength   * ajuste))
         {
             // 🔥 1. mover primero
             rb.position = posicionInicial;
